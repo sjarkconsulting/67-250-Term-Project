@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+	<meta charset = "utf-8" />
+	<meta name = "author" content = "Sean Park, Justin Chang, Andrew Kim, Rachel Kim, Killian Huang" />
+	<meta name = "description" content = "Hayden Shoes Data Dashboard" />
+
+	<!-- Import stylesheets -->
+	<link rel="stylesheet" media="all" type="text/css" href="css/login_styles.css" />
+
+	<!-- Import .js files -->
+	<script  type="text/javascript" src="js/jquery-2.2.1.min.js"> </script>
+	<script  type="text/javascript" src="js/scripts.js"> </script>
+	<script  type="text/javascript" src="js/jquery-ui.js"></script>
+	<script  type="text/javascript" src="js/highcharts.js"></script>
+	<script  type="text/javascript" src="js/modules/exporting.js"></script>
+
+	<title>Hayden Shoes Data Dashboard</title>
+</head>
+
+<body>
+
+	<div id="title">
+		<h1>Data Dashboard Log In</h1>
+	</div> <!-- Close title -->
+	
+	<div id="form">
+		<form name="login" onsubmit="return validate();" action="index.html">
+				<fieldset>
+					<legend>Username: </legend>
+					<input type="text" name="firstname" maxlength="250" value="" required><br/>
+					<legend>Password: </legend>
+					<input type="password" id="password" name="password" maxlength="20" value="" required><br/>
+					<label>Remember Password? </label>
+	  				<input type="checkbox" name="remember" value="no"><br/><br/>
+				</fieldset>
+
+				<p><i>Required fields are indicated by *s.<i></p>
+
+				<input id="submit_button" type="image" src="images/submit.png" border="0" alt="Login" />
+
+			</form>
+	</div>
+
+	<footer>
+	</footer>
+
+</body>
+
+</html>
