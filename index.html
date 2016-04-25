@@ -1,49 +1,135 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta charset = "utf-8" />
-	<meta name = "author" content = "Sean Park, Justin Chang, Andrew Kim, Rachel Kim, Killian Huang" />
-	<meta name = "description" content = "Hayden Shoes Data Dashboard" />
+	<meta charset="utf-8"/>
+	<meta name="author​" content="sjark consulting">
+	<meta name="keywords" content="Hayden Shoes Dashboard">
+	<meta name="description" content="Hayden Shoes Dashboard">
 
-	<!-- Import stylesheets -->
-	<link rel="stylesheet" media="all" type="text/css" href="css/styles.css" />
+	<title>Hayden Shoes</title>
+	<link rel="stylesheet" media="all" type="text/css" href="css/styles.css"/>
+	<link rel="stylesheet" media="all" type="text/css" href="css/jquery-ui.css" />
 
-	<!-- Import .js files -->
-	<script  type="text/javascript" src="js/jquery-2.2.1.min.js"> </script>
-	<script  type="text/javascript" src="js/scripts.js"> </script>
-	<script  type="text/javascript" src="js/jquery-ui.js"></script>
-	<script  type="text/javascript" src="js/highcharts.js"></script>
-	<script  type="text/javascript" src="js/modules/exporting.js"></script>
+	<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/highcharts.js"></script>
+	<script type="text/javascript" src="js/modules/exporting.js"></script>
 
-	<title>Hayden Shoes Data Dashboard</title>
+	<style type="text/css">
+		${demo.css}
+	</style>
+	<script type="text/javascript">
+		$(function () {
+		    $('#data').highcharts({
+		        title: {
+		            text: 'Popular items for all locations'
+		        },
+		         subtitle: {
+		            text: 'number of sales per month in 2016',
+		            x: -20
+		        },
+		        xAxis: {
+		            categories: ['Carrot Cake', 'Butter Cookie (dozen)', 'Burnt Almond Torte']
+		        },
+		        labels: {
+		            items: [{
+		                html: 'Total sales',
+		                style: {
+		                    left: '50px',
+		                    top: '18px',
+		                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+		                }
+		            }]
+		        },
+		        series: [{
+		            type: 'column',
+		            name: 'January',
+		            data: [38, 159, 534]
+		        }, {
+		            type: 'column',
+		            name: 'February',
+		            data: [27, 287, 498]
+		        }, {
+		            type: 'column',
+		            name: 'March',
+		            data: [157, 319, 512]
+		        }, {
+		            type: 'pie',
+		            name: 'Total sales',
+		            data: [{
+		                name: 'Burnt Almond Torte',
+		                y: 1544,
+		                color: Highcharts.getOptions().colors[0] // Jane's color
+		            }, {
+		                name: 'Butter Cookie (dozen)',
+		                y: 765,
+		                color: Highcharts.getOptions().colors[1] // John's color
+		            }, {
+		                name: 'Carrot Cake',
+		                y: 222,
+		                color: Highcharts.getOptions().colors[2] // Joe's color
+		            }],
+		            center: [100, 80],
+		            size: 100,
+		            showInLegend: false,
+		            dataLabels: {
+		                enabled: false
+		            }
+		        }]
+		    });
+		});
+	</script>
+
+</head>
+
 </head>
 
 <body>
-
-	<div id="top_bar">
-	<div id="top_row"> <!-- Navigation bar + image. Same throughout all webpages. -->
-		<div id="image">
-			<h1>Data Dashboard</h1>
-		</div>
-	</div> <!-- Close top_row -->
-	</div>
-	
 	<div id="sidebar">
+		<h2>HAYDEN SHOES</h2>
+		<div id="profile_pic">
+			<img src="images/profile.png" alt="profile" style="width: 70px">
+		</div>
+		<div id="profile_info">
+			<a>Welcome,</a><br/>
+			<b>Mirela Hayden</b>
+		</div>
+		<ul>
+			<li><a class="active" href="index.html">Home</a></li>
+			<li><a href="sales.html">Sales</a></li>
+			<li><a href="profile.html">Profile</a></li>
+			<li><a href="boutiques.html">Boutiques</a></li>
+		</ul>
+	</div>
+
+	<div id="header">
+	</div>
+
+	<div id="main">
 		
-		<div id="user_info">
+		<div id="main-graph" class="big-box">
+			 <script src="https://code.highcharts.com/highcharts.js"></script>
+	        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        	<div id="data"></div> <!--the graph code-->
+
 		</div>
 
-		<div id="tabs">
+
+		<div id="subgraph1" class="small-box">
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		</div>
+
+		<div id="subgraph2" class="small-box">
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
 		</div>
 
 	</div>
 
-	<div id="content">
-		Content
-	</div>
-
-	<footer>
-	</footer>
 
 </body>
 
 </html>
+
+
