@@ -248,6 +248,7 @@ body {
 
 .subgraph1 {
 	float: left;
+
 }
 
 .subgraph2 {
@@ -263,7 +264,7 @@ body {
 	PROFILE
 ============================================================================= */
 #profile {
-	height: 670px;
+	height: 780px;
 }
 
 #user-info {
@@ -282,7 +283,7 @@ body {
 
 #user-content {
 	width: calc(100% - 285px);
-	height: 640px;
+	height: 750px;
 	padding: 10px 20px 20px;
 	float: left;
 	border-left: 1px dotted black;
@@ -290,7 +291,7 @@ body {
 }
 
 #user-sales {
-	height: 300px;
+	height: 400px;
 
 }
 
