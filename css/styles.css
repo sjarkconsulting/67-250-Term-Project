@@ -231,8 +231,9 @@ body {
 	background-color: white;
 	border: 1px dotted black;
 	margin: 10px 0px;
-
+	display: inline-block;
 	text-align: center;
+
 }
 
 #main .small-box {
@@ -262,13 +263,16 @@ body {
 }
 
 
+.graph {
+	width: 100%;
+}
+
 /* =============================================================================
 	PROFILE
 ============================================================================= */
 #profile {
-	height: 780px;
+	height: calc(100% - 93px);
 }
-
 #user-info {
 	width: 200px;
 	margin: 20px 20px 20px 20px;
@@ -285,7 +289,7 @@ body {
 
 #user-content {
 	width: calc(100% - 285px);
-	height: 750px;
+
 	padding: 10px 20px 20px;
 	float: left;
 	border-left: 1px dotted black;
