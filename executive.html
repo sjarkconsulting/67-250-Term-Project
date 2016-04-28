@@ -80,6 +80,107 @@
 		        }]
 		    });
 		});
+
+		//market demographic
+			$(function () {
+			$('#piechart1').highcharts({
+					chart: {
+							plotBackgroundColor: null,
+							plotBorderWidth: null,
+							plotShadow: false,
+							type: 'pie'
+					},
+					title: {
+							text: 'Market Demographic'
+					},
+					tooltip: {
+							pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+					},
+					plotOptions: {
+							pie: {
+									allowPointSelect: true,
+									cursor: 'pointer',
+									dataLabels: {
+											enabled: true,
+											format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+											style: {
+													color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+											}
+									}
+							}
+					},
+					series: [{
+							name: 'Ages',
+							colorByPoint: true,
+							data: [{
+									name: '1-14',
+									y: 100
+							}, {
+									name: '15-18',
+									y: 199,
+							}, {
+									name: '19-22',
+									y: 248,
+									sliced: true,
+									selected: true
+							}, {
+									name: '22-25',
+									y: 356,
+							}, {
+									name: '25+',
+									y: 180,
+							}]
+					}]
+			});
+		});
+
+		//Sales Channels
+		$(function () {
+		$('#piechart2').highcharts({
+				chart: {
+						plotBackgroundColor: null,
+						plotBorderWidth: null,
+						plotShadow: false,
+						type: 'pie'
+				},
+				title: {
+						text: 'Sales Channel'
+				},
+				tooltip: {
+						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				},
+				plotOptions: {
+						pie: {
+								allowPointSelect: true,
+								cursor: 'pointer',
+								dataLabels: {
+										enabled: true,
+										format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+										style: {
+												color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+										}
+								}
+						}
+				},
+				series: [{
+						name: 'Channels',
+						colorByPoint: true,
+						data: [{
+								name: 'Retails',
+								y: 680,
+						}, {
+								name: 'eCommerce',
+								y: 760,
+								sliced: true,
+								selected: true
+						}, {
+								name: 'mCommerce',
+								y: 124,
+						}]
+				}]
+		});
+	});
+
 	</script>
 
 </head>
@@ -127,11 +228,11 @@
 		</div>
 
 
-		<div class="small-box subgraph1">
+		<div id="piechart1" class="small-box subgraph1">
 			<p>insert graph.</p>
 		</div>
 
-		<div class="small-box subgraph2">
+		<div id="piechart2" class="small-box subgraph2">
 			<p>insert graph.</p>
 		</div>
 
