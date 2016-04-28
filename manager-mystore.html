@@ -22,65 +22,47 @@
 	</style>
 	<script type="text/javascript">
 		$(function () {
-		    $('#data').highcharts({
-		        title: {
-		            text: 'Popular items for all locations'
-		        },
-		         subtitle: {
-		            text: 'number of sales per month in 2016',
-		            x: -20
-		        },
-		        xAxis: {
-		            categories: ['Carrot Cake', 'Butter Cookie (dozen)', 'Burnt Almond Torte']
-		        },
-		        labels: {
-		            items: [{
-		                html: 'Total sales',
-		                style: {
-		                    left: '50px',
-		                    top: '18px',
-		                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-		                }
-		            }]
-		        },
-		        series: [{
-		            type: 'column',
-		            name: 'January',
-		            data: [38, 159, 534]
-		        }, {
-		            type: 'column',
-		            name: 'February',
-		            data: [27, 287, 498]
-		        }, {
-		            type: 'column',
-		            name: 'March',
-		            data: [157, 319, 512]
-		        }, {
-		            type: 'pie',
-		            name: 'Total sales',
-		            data: [{
-		                name: 'Burnt Almond Torte',
-		                y: 1544,
-		                color: Highcharts.getOptions().colors[0] // Jane's color
-		            }, {
-		                name: 'Butter Cookie (dozen)',
-		                y: 765,
-		                color: Highcharts.getOptions().colors[1] // John's color
-		            }, {
-		                name: 'Carrot Cake',
-		                y: 222,
-		                color: Highcharts.getOptions().colors[2] // Joe's color
-		            }],
-		            center: [100, 80],
-		            size: 100,
-		            showInLegend: false,
-		            dataLabels: {
-		                enabled: false
-		            }
-		        }]
-		    });
-		});
-	</script>
+$('#threeperson').highcharts({
+		title: {
+				text: 'Sales over Recent Week',
+				x: -20 //center
+		},
+		xAxis: {
+				categories: ['MON','TUE','WED','THURS','FRI']
+		},
+		yAxis: {
+				title: {
+						text: 'Pairs'
+				},
+				plotLines: [{
+						value: 0,
+						width: 1,
+						color: '#808080'
+				}]
+		},
+		tooltip: {
+				valueSuffix: ' pairs'
+		},
+		legend: {
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'middle',
+				borderWidth: 0
+		},
+		series: [{
+				name: 'John Doe',
+				data: [6,10,4,2,1]
+		}, {
+				name: 'John Doha',
+				data: [12,15,18,15,12]
+		}, {
+				name: 'John Dodo',
+				data: [1,4,3,5,4]
+		}]
+});
+});
+
+</script>
 
 </head>
 
@@ -118,10 +100,7 @@
 	<div id="main">
 		
 		<div id="main-graph" class="big-box">
-			<script src="https://code.highcharts.com/highcharts.js"></script>
-	        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        	<div id="data"></div> <!--the graph code-->
-
+			<div id="threeperson"></div>
 		</div>
 
 

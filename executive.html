@@ -22,64 +22,63 @@
 	</style>
 	<script type="text/javascript">
 		$(function () {
-		    $('#data').highcharts({
-		        title: {
-		            text: 'Popular items for all locations'
-		        },
-		         subtitle: {
-		            text: 'number of sales per month in 2016',
-		            x: -20
-		        },
-		        xAxis: {
-		            categories: ['Carrot Cake', 'Butter Cookie (dozen)', 'Burnt Almond Torte']
-		        },
-		        labels: {
-		            items: [{
-		                html: 'Total sales',
-		                style: {
-		                    left: '50px',
-		                    top: '18px',
-		                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-		                }
-		            }]
-		        },
-		        series: [{
-		            type: 'column',
-		            name: 'January',
-		            data: [38, 159, 534]
-		        }, {
-		            type: 'column',
-		            name: 'February',
-		            data: [27, 287, 498]
-		        }, {
-		            type: 'column',
-		            name: 'March',
-		            data: [157, 319, 512]
-		        }, {
-		            type: 'pie',
-		            name: 'Total sales',
-		            data: [{
-		                name: 'Burnt Almond Torte',
-		                y: 1544,
-		                color: Highcharts.getOptions().colors[0] // Jane's color
-		            }, {
-		                name: 'Butter Cookie (dozen)',
-		                y: 765,
-		                color: Highcharts.getOptions().colors[1] // John's color
-		            }, {
-		                name: 'Carrot Cake',
-		                y: 222,
-		                color: Highcharts.getOptions().colors[2] // Joe's color
-		            }],
-		            center: [100, 80],
-		            size: 100,
-		            showInLegend: false,
-		            dataLabels: {
-		                enabled: false
-		            }
-		        }]
-		    });
-		});
+		    $('#bar').highcharts({
+	        chart: {
+	            type: 'bar'
+	        },
+	        title: {
+	            text: 'Weekly Sales by Shoe Style'
+	        },
+	        xAxis: {
+	            categories: ['The Classic', 'Style 2', 'Style 3', 'Style 4'],
+	        },
+	        yAxis: {
+	            min: 0,
+	            title: {
+	                text: 'number of sales',
+	                align: 'high'
+	            },
+	            labels: {
+	                overflow: 'justify'
+	            }
+	        },
+	        tooltip: {
+	            valueSuffix: ' pairs'
+	        },
+	        plotOptions: {
+	            bar: {
+	                dataLabels: {
+	                    enabled: true
+	                }
+	            }
+	        },
+	        legend: {
+	            layout: 'horizontal',
+	            align: 'right',
+	            verticalAlign: 'top',
+	            x: -20,
+	            y: 20,
+	            floating: true,
+	            borderWidth: 1,
+	            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+	            shadow: false
+	        },
+	        credits: {
+	            enabled: false
+	        },
+	        series: [{
+	            name: 'Current Week',
+	            data: [107, 230, 170, 135]
+	        }, {
+	            name: 'Last Week',
+	            data: [133, 156, 147, 96]
+	        }, {
+	            name: 'Two Weeks Ago',
+	            data: [124, 154, 250, 138]
+	        }]
+	    });
+	});
+
 
 		//market demographic
 			$(function () {
@@ -223,18 +222,14 @@
 		<div id="main-graph" class="big-box">
 			<script src="https://code.highcharts.com/highcharts.js"></script>
 	        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        	<div id="data"></div> <!--the graph code-->
+        	<div id="bar"></div> <!--the graph code-->
 
 		</div>
 
 
-		<div id="piechart1" class="small-box subgraph1">
-			<p>insert graph.</p>
-		</div>
+		<div id="piechart1" class="small-box subgraph1" style="max-height:300px"></div>
 
-		<div id="piechart2" class="small-box subgraph2">
-			<p>insert graph.</p>
-		</div>
+		<div id="piechart2" class="small-box subgraph2 style="max-height:300px""></div>
 
 	</div>
 

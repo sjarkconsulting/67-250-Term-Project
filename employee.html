@@ -9,6 +9,50 @@
 
 	<title>Hayden Shoes</title>
 	<link rel="stylesheet" media="all" type="text/css" href="css/styles.css"/>
+	<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<!--The two following libraries are used for the pie charts-->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+	<script>
+	$(function () {
+$('#oneperson').highcharts({
+		title: {
+				text: 'My Sales over this Week',
+				x: -20 //center
+		},
+		xAxis: {
+				categories: ['MON','TUE','WED','THURS','FRI']
+		},
+		yAxis: {
+				title: {
+						text: 'Pairs'
+				},
+				plotLines: [{
+						value: 0,
+						width: 1,
+						color: '#808080'
+				}]
+		},
+		tooltip: {
+				valueSuffix: ' pairs'
+		},
+		legend: {
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'middle',
+				borderWidth: 0
+		},
+		series: [{
+				name: 'John Doe',
+				data: [6,10,4,2,1]
+		}]
+});
+});
+</script>
+
 </head>
 
 </head>
@@ -26,6 +70,7 @@
 		<ul>
 			<li><a class="active" href="employee.html">My Profile</a></li>
 			<li><a href="employee-training.html">Training</a></li>
+			<li><a href="employee-calendar.html">Calendar</a></li>
 		</ul>
 	</div>
 
@@ -54,7 +99,7 @@
 
 			<div id="user-content">
 				<div id="user-sales" class="big-box">
-					<p>INSERT USER SALES</p>
+					<div id="oneperson"></div>
 				</div>
 
 				<div class="small-box subgraph1">
