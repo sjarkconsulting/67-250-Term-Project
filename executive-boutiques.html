@@ -17,67 +17,54 @@
 	
 	<script type="text/javascript" src="js/highcharts.js"></script>
 	<script type="text/javascript" src="js/modules/exporting.js"></script>
-	<script type="text/javascript" src="js/highmaps.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
 
 	<style type="text/css">
 		${demo.css}
 	</style>
+
 	<script type="text/javascript">
 		$(function () {
-		    // Instanciate the map
-		    $('#container').highcharts('Map', {
-		        chart : {
-		            borderWidth : 1
-		        },
+			$('#boutique_sales').highcharts({
+					title: {
+							text: 'Yearly Sales by Boutiques',
+							x: -20 //center
+					},
+					xAxis: {
+							title:{
+								text:'Months'
+							},
+							categories: ['JAN', 'FEB', 'MARCH', 'APRIL', 'MAY', 'JUNE',
+									'JULY', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+					},
+					yAxis: {
+							title: {
+									text: 'number of sales'
+							},
+							plotLines: [{
+									value: 0,
+									width: 1,
+									color: '#808080'
+							}]
+					},
 
-		        title : {
-		            text : 'Nordic countries'
-		        },
-		        subtitle : {
-		            text : 'Demo of drawing all areas in the map, only highlighting partial data'
-		        },
-
-		        legend: {
-		            enabled: false
-		        },
-
-		        series : [{
-		            name: 'Country',
-		            mapData: Highcharts.maps['custom/europe'],
-		            data: [{
-		                code: 'IS',
-		                value: 1
-		            }, {
-		                code: 'NO',
-		                value: 1
-		            }, {
-		                code: 'SE',
-		                value: 1
-		            }, {
-		                code: 'FI',
-		                value: 1
-		            }, {
-		                code: 'DK',
-		                value: 1
-		            }],
-		            joinBy: ['iso-a2', 'code'],
-		            dataLabels: {
-		                enabled: true,
-		                color: '#FFFFFF',
-		                formatter: function () {
-		                    if (this.point.value) {
-		                        return this.point.name;
-		                    }
-		                }
-		            },
-		            tooltip: {
-		                headerFormat: '',
-		                pointFormat: '{point.name}'
-		            }
-		        }]
-		    });
+					legend: {
+							layout: 'vertical',
+							align: 'right',
+							verticalAlign: 'middle',
+							borderWidth: 0
+					},
+					series: [{
+							name: 'Boutique 1',
+							data: [120,120,150,137,168,173,172,185,172,162,152,120]
+					}, {
+							name: 'Boutique 2',
+							data: [100,89,78,68,89,78,84,73,65,40,20,35]
+					}, {
+							name: 'Boutique 3',
+							data: [45,65,56,65,47,68,69,74,80,88,95,103]
+					}
+					]
+			});
 		});
 	</script>
 
@@ -113,14 +100,158 @@
 				<a href="employee.html">Employee</a>
 			</div>
 		</div>
-
 	</div>
 
 	<div id="main">
 		
 		<div id="main-graph" class="big-box">
-			insert map
+			<div id="boutique_sales"></div>
+		</div>
 
+		<!--US-->
+		<div id="boutiques" class="big-box text">
+
+			<h2>United States</h2>
+			<div class="boutique">
+				<div class="boutique-pic">
+					<img src="images/profile-big.png" style="width:100px">
+				</div>
+				<div class="boutique-info">
+					<span><a class="boutique-name" href="manager-mystore.html">Pittsburgh, PA</a></span>
+					<a id="map" onclick="popUpWindow('https://goo.gl/maps/ne51Sduxq5L2');">
+						<!-- https://www.iconfinder.com/icons/285662/map_icon#size=128 -->
+						<img src="images/map_icon.png" alt="Map"/>
+					</a>
+					<br/>
+					<span>Manager:</span>
+					<span><a class="employee-name" href="manager-profile.html">Jane Doe</a></span><br/>
+					<span><a href="mailto:janedoe@haydenshoes.com">janedoe@haydenshoes.com</a></span>
+				</div>
+			</div>
+
+			<div class="boutique">
+				<div class="boutique-pic">
+					<img src="images/profile-big.png" style="width:100px">
+				</div>
+				<div class="boutique-info">
+					<span><a class="boutique-name" href="manager-mystore.html">Pittsburgh, PA</a></span>
+					<a id="map" onclick="popUpWindow('https://goo.gl/maps/ne51Sduxq5L2');">
+						<!-- https://www.iconfinder.com/icons/285662/map_icon#size=128 -->
+						<img src="images/map_icon.png" alt="Map"/>
+					</a>
+					<br/>
+					<span>Manager:</span>
+					<span><a class="employee-name" href="manager-profile.html">Jane Doe</a></span><br/>
+					<span><a href="mailto:janedoe@haydenshoes.com">janedoe@haydenshoes.com</a></span>
+				</div>
+			</div>
+
+			<div class="boutique">
+				<div class="boutique-pic">
+					<img src="images/profile-big.png" style="width:100px">
+				</div>
+				<div class="boutique-info">
+					<span><a class="boutique-name" href="manager-mystore.html">Pittsburgh, PA</a></span>
+					<a id="map" onclick="popUpWindow('https://goo.gl/maps/ne51Sduxq5L2');">
+						<!-- https://www.iconfinder.com/icons/285662/map_icon#size=128 -->
+						<img src="images/map_icon.png" alt="Map"/>
+					</a>
+					<br/>
+					<span>Manager:</span>
+					<span><a class="employee-name" href="manager-profile.html">Jane Doe</a></span><br/>
+					<span><a href="mailto:janedoe@haydenshoes.com">janedoe@haydenshoes.com</a></span>
+				</div>
+			</div>
+
+			<div class="boutique">
+				<div class="boutique-pic">
+					<img src="images/profile-big.png" style="width:100px">
+				</div>
+				<div class="boutique-info">
+					<span><a class="boutique-name" href="manager-mystore.html">Pittsburgh, PA</a></span>
+					<a id="map" onclick="popUpWindow('https://goo.gl/maps/ne51Sduxq5L2');">
+						<!-- https://www.iconfinder.com/icons/285662/map_icon#size=128 -->
+						<img src="images/map_icon.png" alt="Map"/>
+					</a>
+					<br/>
+					<span>Manager:</span>
+					<span><a class="employee-name" href="manager-profile.html">Jane Doe</a></span><br/>
+					<span><a href="mailto:janedoe@haydenshoes.com">janedoe@haydenshoes.com</a></span>
+				</div>
+			</div>
+		</div>
+
+		<!--Europe-->
+		<div id="boutiques" class="big-box text">
+
+			<h2>Europe</h2>
+			<div class="boutique">
+				<div class="boutique-pic">
+					<img src="images/profile-big.png" style="width:100px">
+				</div>
+				<div class="boutique-info">
+					<span><a class="boutique-name" href="manager-mystore.html">Pittsburgh, PA</a></span>
+					<a id="map" onclick="popUpWindow('https://goo.gl/maps/ne51Sduxq5L2');">
+						<!-- https://www.iconfinder.com/icons/285662/map_icon#size=128 -->
+						<img src="images/map_icon.png" alt="Map"/>
+					</a>
+					<br/>
+					<span>Manager:</span>
+					<span><a class="employee-name" href="manager-profile.html">Jane Doe</a></span><br/>
+					<span><a href="mailto:janedoe@haydenshoes.com">janedoe@haydenshoes.com</a></span>
+				</div>
+			</div>
+
+			<div class="boutique">
+				<div class="boutique-pic">
+					<img src="images/profile-big.png" style="width:100px">
+				</div>
+				<div class="boutique-info">
+					<span><a class="boutique-name" href="manager-mystore.html">Pittsburgh, PA</a></span>
+					<a id="map" onclick="popUpWindow('https://goo.gl/maps/ne51Sduxq5L2');">
+						<!-- https://www.iconfinder.com/icons/285662/map_icon#size=128 -->
+						<img src="images/map_icon.png" alt="Map"/>
+					</a>
+					<br/>
+					<span>Manager:</span>
+					<span><a class="employee-name" href="manager-profile.html">Jane Doe</a></span><br/>
+					<span><a href="mailto:janedoe@haydenshoes.com">janedoe@haydenshoes.com</a></span>
+				</div>
+			</div>
+
+			<div class="boutique">
+				<div class="boutique-pic">
+					<img src="images/profile-big.png" style="width:100px">
+				</div>
+				<div class="boutique-info">
+					<span><a class="boutique-name" href="manager-mystore.html">Pittsburgh, PA</a></span>
+					<a id="map" onclick="popUpWindow('https://goo.gl/maps/ne51Sduxq5L2');">
+						<!-- https://www.iconfinder.com/icons/285662/map_icon#size=128 -->
+						<img src="images/map_icon.png" alt="Map"/>
+					</a>
+					<br/>
+					<span>Manager:</span>
+					<span><a class="employee-name" href="manager-profile.html">Jane Doe</a></span><br/>
+					<span><a href="mailto:janedoe@haydenshoes.com">janedoe@haydenshoes.com</a></span>
+				</div>
+			</div>
+
+			<div class="boutique">
+				<div class="boutique-pic">
+					<img src="images/profile-big.png" style="width:100px">
+				</div>
+				<div class="boutique-info">
+					<span><a class="boutique-name" href="manager-mystore.html">Pittsburgh, PA</a></span>
+					<a id="map" onclick="popUpWindow('https://goo.gl/maps/ne51Sduxq5L2');">
+						<!-- https://www.iconfinder.com/icons/285662/map_icon#size=128 -->
+						<img src="images/map_icon.png" alt="Map"/>
+					</a>
+					<br/>
+					<span>Manager:</span>
+					<span><a class="employee-name" href="manager-profile.html">Jane Doe</a></span><br/>
+					<span><a href="mailto:janedoe@haydenshoes.com">janedoe@haydenshoes.com</a></span>
+				</div>
+			</div>
 		</div>
 
 	</div>

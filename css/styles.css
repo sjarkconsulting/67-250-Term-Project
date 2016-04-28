@@ -222,6 +222,8 @@ body {
 	border-width: 20px;
 	background-color: #F7F7F7;
 	z-index: -1;
+
+	overflow-y: auto;
 }
 
 #main .big-box {
@@ -345,9 +347,41 @@ body {
 	text-align: left;
 }
 
+
+
 .employee-name {
 	color: black;
 	font-size: 18px;
 	font-weight: bold;
 	text-decoration: underline;
+}
+
+/* =============================================================================
+	BOUTIQUES
+============================================================================= */
+.boutique {
+
+	width: 300px;
+	height: 100px;
+	border: 1px solid black;
+	padding: 30px;
+	display: inline-block;
+	margin: 30px;
+}
+
+.boutique-name {
+	color: black;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.boutique-pic {
+	width: 100px;
+	float: left;
+}
+
+.boutique-info {
+	margin-left: 115px;
+	text-align: left;
 }

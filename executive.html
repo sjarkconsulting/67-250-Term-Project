@@ -21,164 +21,152 @@
 		${demo.css}
 	</style>
 	<script type="text/javascript">
+
 		$(function () {
 		    $('#bar').highcharts({
-	        chart: {
-	            type: 'bar'
-	        },
-	        title: {
-	            text: 'Weekly Sales by Shoe Style'
-	        },
-	        xAxis: {
-	            categories: ['The Classic', 'Style 2', 'Style 3', 'Style 4'],
-	        },
-	        yAxis: {
-	            min: 0,
-	            title: {
-	                text: 'number of sales',
-	                align: 'high'
-	            },
-	            labels: {
-	                overflow: 'justify'
-	            }
-	        },
-	        tooltip: {
-	            valueSuffix: ' pairs'
-	        },
-	        plotOptions: {
-	            bar: {
-	                dataLabels: {
-	                    enabled: true
-	                }
-	            }
-	        },
-	        legend: {
-	            layout: 'horizontal',
-	            align: 'right',
-	            verticalAlign: 'top',
-	            x: -20,
-	            y: 20,
-	            floating: true,
-	            borderWidth: 1,
-	            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-	            shadow: false
-	        },
-	        credits: {
-	            enabled: false
-	        },
-	        series: [{
-	            name: 'Current Week',
-	            data: [107, 230, 170, 135]
-	        }, {
-	            name: 'Last Week',
-	            data: [133, 156, 147, 96]
-	        }, {
-	            name: 'Two Weeks Ago',
-	            data: [124, 154, 250, 138]
-	        }]
-	    });
-	});
+		        chart: {
+		            type: 'bar'
+		        },
+		        title: {
+		            text: 'Weekly Sales by Shoe Style'
+		        },
+		        xAxis: {
+		            categories: ['The Classic', 'Style 2', 'Style 3', 'Style 4'],
+		        },
+		        yAxis: {
+		            min: 0,
+		            title: {
+		                text: 'number of sales',
+		                align: 'high'
+		            },
+		            labels: {
+		                overflow: 'justify'
+		            }
+		        },
+		        tooltip: {
+		            valueSuffix: ' pairs'
+		        },
+		        plotOptions: {
+		            bar: {
+		                dataLabels: {
+		                    enabled: true
+		                }
+		            }
+		        },
+		        legend: {
+		            layout: 'horizontal',
+		            align: 'right',
+		            verticalAlign: 'top',
+		            x: -20,
+		            y: 20,
+		            floating: true,
+		            borderWidth: 1,
+		            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+		            shadow: false
+		        },
+		        credits: {
+		            enabled: false
+		        },
+		        series: [{
+		            name: 'Current Week',
+		            data: [107, 230, 170, 135]
+		        }, {
+		            name: 'Last Week',
+		            data: [133, 156, 147, 96]
+		        }, {
+		            name: 'Two Weeks Ago',
+		            data: [124, 154, 250, 138]
+		        }]
+		    });
+		});
 
-
-		//market demographic
-			$(function () {
-			$('#piechart1').highcharts({
-					chart: {
-							plotBackgroundColor: null,
-							plotBorderWidth: null,
-							plotShadow: false,
-							type: 'pie'
-					},
+		$(function () {
+			$('#yearly_sales').highcharts({
 					title: {
-							text: 'Market Demographic'
+							text: 'Yearly Sales by Shoe Styles',
+							x: -20 //center
 					},
-					tooltip: {
-							pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+					xAxis: {
+							title:{
+								text:'Months'
+							},
+							categories: ['JAN', 'FEB', 'MARCH', 'APRIL', 'MAY', 'JUNE',
+									'JULY', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
 					},
-					plotOptions: {
-							pie: {
-									allowPointSelect: true,
-									cursor: 'pointer',
-									dataLabels: {
-											enabled: true,
-											format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-											style: {
-													color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-											}
-									}
-							}
+					yAxis: {
+							title: {
+									text: 'number of sales'
+							},
+							plotLines: [{
+									value: 0,
+									width: 1,
+									color: '#808080'
+							}]
+					},
+
+					legend: {
+							layout: 'vertical',
+							align: 'right',
+							verticalAlign: 'middle',
+							borderWidth: 0
 					},
 					series: [{
-							name: 'Ages',
-							colorByPoint: true,
-							data: [{
-									name: '1-14',
-									y: 100
-							}, {
-									name: '15-18',
-									y: 199,
-							}, {
-									name: '19-22',
-									y: 248,
-									sliced: true,
-									selected: true
-							}, {
-									name: '22-25',
-									y: 356,
-							}, {
-									name: '25+',
-									y: 180,
-							}]
-					}]
+							name: 'The Classic',
+							data: [120,120,150,137,168,173,172,185,172,162,152,120]
+					}, {
+							name: 'Style 2',
+							data: [100,89,78,68,89,78,84,73,65,40,20,35]
+					}, {
+							name: 'Style 3',
+							data: [45,65,56,65,47,68,69,74,80,88,95,103]
+					}
+					]
 			});
 		});
 
-		//Sales Channels
 		$(function () {
-		$('#piechart2').highcharts({
-				chart: {
-						plotBackgroundColor: null,
-						plotBorderWidth: null,
-						plotShadow: false,
-						type: 'pie'
-				},
-				title: {
-						text: 'Sales Channel'
-				},
-				tooltip: {
-						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-				},
-				plotOptions: {
-						pie: {
-								allowPointSelect: true,
-								cursor: 'pointer',
-								dataLabels: {
-										enabled: true,
-										format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-										style: {
-												color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-										}
-								}
-						}
-				},
-				series: [{
-						name: 'Channels',
-						colorByPoint: true,
-						data: [{
-								name: 'Retails',
-								y: 680,
-						}, {
-								name: 'eCommerce',
-								y: 760,
-								sliced: true,
-								selected: true
-						}, {
-								name: 'mCommerce',
-								y: 124,
-						}]
-				}]
+			$('#web_traffic').highcharts({
+					title: {
+							text: 'Web Traffic by Month',
+							x: -20 //center
+					},
+					xAxis: {
+							title:{
+								text:'Months'
+							},
+							categories: ['JAN', 'FEB', 'MARCH', 'APRIL', 'MAY', 'JUNE',
+									'JULY', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+					},
+					yAxis: {
+							title: {
+									text: 'number of sales'
+							},
+							plotLines: [{
+									value: 0,
+									width: 1,
+									color: '#808080'
+							}]
+					},
+
+					legend: {
+							layout: 'vertical',
+							align: 'right',
+							verticalAlign: 'middle',
+							borderWidth: 0
+					},
+					series: [{
+							name: 'The Classic',
+							data: [120,120,150,137,168,173,172,185,172,162,152,120]
+					}, {
+							name: 'Style 2',
+							data: [100,89,78,68,89,78,84,73,65,40,20,35]
+					}, {
+							name: 'Style 3',
+							data: [45,65,56,65,47,68,69,74,80,88,95,103]
+					}
+					]
+			});
 		});
-	});
 
 	</script>
 
@@ -220,16 +208,16 @@
 	<div id="main">
 		
 		<div id="main-graph" class="big-box">
-			<script src="https://code.highcharts.com/highcharts.js"></script>
-	        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        	<div id="bar"></div> <!--the graph code-->
+        	<div id="yearly_sales"></div>
+		</div><br/>
 
+		<div id="main-graph" class="big-box">
+        	<div id="web_traffic"></div>
+		</div><br/>
+
+		<div id="main-graph" class="big-box">
+        	<div id="bar"></div>
 		</div>
-
-
-		<div id="piechart1" class="small-box subgraph1" style="max-height:300px"></div>
-
-		<div id="piechart2" class="small-box subgraph2 style="max-height:300px""></div>
 
 	</div>
 

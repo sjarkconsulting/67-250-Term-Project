@@ -9,14 +9,12 @@
 
 	<title>Hayden Shoes</title>
 	<link rel="stylesheet" media="all" type="text/css" href="css/styles.css"/>
-	<link rel="stylesheet" media="all" type="text/css" href="css/jquery-ui.css" />
-
 	<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/highcharts.js"></script>
-	<script type="text/javascript" src="js/modules/exporting.js"></script>
-
+	<!--The two following libraries are used for the pie charts-->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 </head>
 
 </head>
@@ -29,12 +27,13 @@
 		</div>
 		<div id="profile_info">
 			<span>Welcome,</span><br/>
-			<a href="profile.html">Mirela Hayden</a>
+			<a href="employee.html">John Doe</a>
 		</div>
 		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="sales.html">Sales</a></li>
-			<li><a href="boutiques.html">Boutiques</a></li>
+			<li><a href="employee.html">My Profile</a></li>
+			<li><a href="employee-training.html">Training</a></li>
+			<li><a href="employee-calendar.html">Calendar</a></li>
+			<li><a class="active" href="employee-contacts.html">My Team</a></li>
 		</ul>
 	</div>
 
@@ -56,24 +55,13 @@
 			
 			<div id="user-info">
 				<img src="images/profile-big.png" style="width: 200px; border: 1px solid black"><br/>
-				<h2>Mirelea Hayden</h2>
+				<h2>John Doe</h2>
 				<a>Pittsburgh, PA</a><br/>
-				<a>Chief Executive Officer</a>
+				<a>Cashier</a>
 			</div>
 
-			<div id="user-content">
-				<div id="user-sales" class="big-box">
-					<p>INSERT USER SALES</p>
-				</div>
-
-				<div class="small-box subgraph1">
-					<p>insert graph.</p>
-				</div>
-
-				<div class="small-box subgraph2">
-					<p>insert graph.</p>
-				</div>		
-
+			<div id="contact_info">
+				insert table here
 			</div>
 
 		</div>
